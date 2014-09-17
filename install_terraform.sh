@@ -15,10 +15,15 @@ charge_libs() {
 init() {
   check_sf
   charge_libs
+  dest_dir=/usr/bin
+  url_bin=https://dl.bintray.com/mitchellh/terraform/terraform_0.2.2_linux_amd64.zip
+  tmp_dir=/var/tmp/install_terraform
+  sflib_std_rep_create $tmp_dir
 }
 
 sortie() {
   rc=$1
+  sflib_std_rm $tmp_dir
   [ $SEVERITE -ne 0 ] && rc=$SEVERITE
   exit $rc
 }
