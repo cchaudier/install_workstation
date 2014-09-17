@@ -20,7 +20,7 @@ init() {
   wrk_dir=$(pwd)
   tmp_dir=/var/tmp/install_terraform
   sflib_std_rep_create $tmp_dir
-  ce $tmp_dir
+  cd $tmp_dir
 }
 
 sortie() {
@@ -36,5 +36,13 @@ check_sf() {
   https://github.com/cchaudier/shellfactory" && exit 1
 }
 
+get_bin() {
+ wget $url_bin
+ unzip *
+ rm *.zip
+ sudo mv -f * $dest_dir
+}
+
 init
+get_bin
 sortie 0
