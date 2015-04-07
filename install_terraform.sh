@@ -16,7 +16,7 @@ init() {
   check_sf
   charge_libs
   dest_dir=/usr/bin
-  terra_vers=0.3.6
+  terra_vers=0.4.0
   url_bin=https://dl.bintray.com/mitchellh/terraform/terraform_${terra_vers}_linux_amd64.zip
   wrk_dir=$(pwd)
   tmp_dir=/var/tmp/install_terraform
